@@ -1,0 +1,90 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Clevetit",
+		"_postman_id": "1a3b96c6-8d2f-9773-7b0b-4702d3e2af0c",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET /beers",
+			"request": {
+				"url": "localhost:8004/beers",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "POST /beers/{beerID}",
+			"request": {
+				"url": "localhost:8001/beers/2",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Id\":2,\n\t\"Name\":\"Golden\",\n\t\"Brewery\":\"Kross\",\n\t\"Country\":\"Chile\",\n\t\"Price\":10.5,\n\t\"Currency\":\"EUR\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET /beers/{beerID}/boxprice",
+			"request": {
+				"url": {
+					"raw": "localhost:8002/beers/1/boxprice?currency=CAD&quantity=6",
+					"host": [
+						"localhost"
+					],
+					"port": "8002",
+					"path": [
+						"beers",
+						"1",
+						"boxprice"
+					],
+					"query": [
+						{
+							"key": "currency",
+							"value": "CAD",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "quantity",
+							"value": "6",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET /beers/{beerID}",
+			"request": {
+				"url": "localhost:8003/beers/1",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,25 @@
+version: '3.9'
+
+services:
+  addbeers:
+    build: ./addbeers
+    ports:
+      - "8001:21001"
+    depends_on:
+      - boxbeerpricebyid
+  boxbeerpricebyid:
+    build: ./boxbeerpricebyid
+    ports:
+      - "8002:21004"
+    depends_on:
+      - searchbeerbyid
+  searchbeerbyid:
+    build: ./searchbeerbyid
+    ports:
+      - "8003:21003"
+    depends_on:
+      - searchbeers
+  searchbeers:
+    build: ./searchbeers
+    ports:
+      - "8004:21002"
